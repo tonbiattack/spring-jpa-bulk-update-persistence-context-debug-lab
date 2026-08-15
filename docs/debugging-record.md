@@ -6,7 +6,7 @@
 
 ## 最初に観測した事実
 
-バグ状態のコミットは`985da6e`です。`mvn --batch-mode -Dtest=ProductSuspensionApiTest test`を実行すると、テストは設定不備ではなく、最終DB状態のアサーションで失敗しました。
+バグ状態のコミットは`985da6e`、最小修正のコミットは`62460dc`です。`mvn --batch-mode -Dtest=ProductSuspensionApiTest test`を実行すると、バグ状態のテストは設定不備ではなく、最終DB状態のアサーションで失敗しました。
 
 | 観測項目 | 期待 | 実際 | 根拠 |
 | --- | --- | --- | --- |
