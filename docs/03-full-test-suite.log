@@ -1,0 +1,138 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --< com.example:spring-jpa-bulk-update-persistence-context-debug-lab >--
+[INFO] Building spring-jpa-bulk-update-persistence-context-debug-lab 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ spring-jpa-bulk-update-persistence-context-debug-lab ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/work/spring-jpa-bulk-update-persistence-context-debug-lab/src/main/resources
+[INFO] skip non existing resourceDirectory /home/ubuntu/work/spring-jpa-bulk-update-persistence-context-debug-lab/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ spring-jpa-bulk-update-persistence-context-debug-lab ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ spring-jpa-bulk-update-persistence-context-debug-lab ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ spring-jpa-bulk-update-persistence-context-debug-lab ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.2.5:test (default-test) @ spring-jpa-bulk-update-persistence-context-debug-lab ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.bulkupdate.ProductSuspensionApiTest
+10:57:05.896 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.bulkupdate.ProductSuspensionApiTest]: ProductSuspensionApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:57:05.990 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.bulkupdate.BulkUpdateDebugApplication for test class com.example.bulkupdate.ProductSuspensionApiTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.3.12)
+
+2026-08-15T10:57:06.384Z  INFO 3795 --- [           main] c.e.bulkupdate.ProductSuspensionApiTest  : Starting ProductSuspensionApiTest using Java 21.0.11 with PID 3795 (started by ubuntu in /home/ubuntu/work/spring-jpa-bulk-update-persistence-context-debug-lab)
+2026-08-15T10:57:06.385Z  INFO 3795 --- [           main] c.e.bulkupdate.ProductSuspensionApiTest  : No active profile set, falling back to 1 default profile: "default"
+2026-08-15T10:57:06.875Z  INFO 3795 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15T10:57:06.917Z  INFO 3795 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2026-08-15T10:57:07.223Z  INFO 3795 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15T10:57:07.273Z  INFO 3795 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-08-15T10:57:07.301Z  INFO 3795 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-08-15T10:57:07.539Z  INFO 3795 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15T10:57:07.584Z  INFO 3795 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-15T10:57:07.745Z  INFO 3795 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bulk-update-debug user=SA
+2026-08-15T10:57:07.747Z  INFO 3795 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-15T10:57:08.455Z  INFO 3795 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15T10:57:08.467Z DEBUG 3795 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists products cascade 
+2026-08-15T10:57:08.474Z DEBUG 3795 --- [           main] org.hibernate.SQL                        : 
+    create table products (
+        id bigint generated by default as identity,
+        note varchar(255),
+        sku varchar(255),
+        status enum ('ACTIVE','SUSPENDED'),
+        primary key (id)
+    )
+2026-08-15T10:57:08.485Z  INFO 3795 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15T10:57:09.175Z  INFO 3795 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-08-15T10:57:09.176Z  INFO 3795 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-08-15T10:57:09.178Z  INFO 3795 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-08-15T10:57:09.195Z  INFO 3795 --- [           main] c.e.bulkupdate.ProductSuspensionApiTest  : Started ProductSuspensionApiTest in 3.083 seconds (process running for 3.884)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/home/ubuntu/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-08-15T10:57:09.717Z DEBUG 3795 --- [           main] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.note,
+        p1_0.sku,
+        p1_0.status 
+    from
+        products p1_0
+2026-08-15T10:57:09.757Z DEBUG 3795 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        products
+        (note, sku, status, id) 
+    values
+        (?, ?, ?, default)
+2026-08-15T10:57:09.759Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [登録直後]
+2026-08-15T10:57:09.759Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [SKU-001]
+2026-08-15T10:57:09.759Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (3:ENUM) <- [ACTIVE]
+2026-08-15T10:57:09.862Z DEBUG 3795 --- [           main] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.note,
+        p1_0.sku,
+        p1_0.status 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2026-08-15T10:57:09.863Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-08-15T10:57:09.865Z  INFO 3795 --- [           main] c.e.b.product.ProductSuspensionService   : 管理中エンティティを取得: id=1, status=ACTIVE, note=登録直後
+2026-08-15T10:57:09.865Z  INFO 3795 --- [           main] c.e.b.product.ProductSuspensionService   : 管理中エンティティを停止済みに変更: id=1, status=SUSPENDED
+2026-08-15T10:57:09.866Z  INFO 3795 --- [           main] c.e.b.product.ProductSuspensionService   : 停止理由を更新: id=1, 管理中status=SUSPENDED, note=品質確認のため停止
+2026-08-15T10:57:09.871Z DEBUG 3795 --- [           main] org.hibernate.SQL                        : 
+    update
+        products 
+    set
+        note=?,
+        sku=?,
+        status=? 
+    where
+        id=?
+2026-08-15T10:57:09.872Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [品質確認のため停止]
+2026-08-15T10:57:09.873Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [SKU-001]
+2026-08-15T10:57:09.873Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (3:ENUM) <- [SUSPENDED]
+2026-08-15T10:57:09.873Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [1]
+2026-08-15T10:57:09.882Z DEBUG 3795 --- [           main] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.note,
+        p1_0.sku,
+        p1_0.status 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2026-08-15T10:57:09.882Z TRACE 3795 --- [           main] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.172 s -- in com.example.bulkupdate.ProductSuspensionApiTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.629 s
+[INFO] Finished at: 2026-08-15T10:57:10Z
+[INFO] ------------------------------------------------------------------------

@@ -24,9 +24,9 @@ public class ProductSuspensionService {
         logger.info("管理中エンティティを取得: id={}, status={}, note={}",
                 product.getId(), product.getStatus(), product.getNote());
 
-        int updatedRows = productRepository.updateStatus(productId, ProductStatus.SUSPENDED);
-        logger.info("バルク更新を実行: id={}, updatedRows={}, 管理中status={}",
-                productId, updatedRows, product.getStatus());
+        product.suspend();
+        logger.info("管理中エンティティを停止済みに変更: id={}, status={}",
+                productId, product.getStatus());
 
         product.changeNote(reason);
         logger.info("停止理由を更新: id={}, 管理中status={}, note={}",

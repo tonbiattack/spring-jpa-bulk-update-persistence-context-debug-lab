@@ -50,7 +50,8 @@ class ProductSuspensionApiTest {
 
         assertAll(
                 () -> assertThat(persistedProduct.getStatus()).isEqualTo(ProductStatus.SUSPENDED),
-                () -> assertThat(persistedProduct.getNote()).isEqualTo("品質確認のため停止")
+                () -> assertThat(persistedProduct.getNote()).isEqualTo("品質確認のため停止"),
+                () -> assertThat(persistedProduct.getSku()).isEqualTo("SKU-001")
         );
     }
 }
